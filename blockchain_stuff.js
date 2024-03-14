@@ -1,6 +1,6 @@
 const NETWORK_ID = 534351
 
-const MY_CONTRACT_ADDRESS = "0xc12F743afecDcdB48b5B5CE7558d04D4cc240bA1"
+const MY_CONTRACT_ADDRESS = "0x9eb3C959ED45B6A18Bd19C88ff70220F7D95dc40"
 const MY_CONTRACT_ABI_PATH = "./json_abi/MyContract.json"
 var my_contract
 
@@ -101,11 +101,8 @@ async function connectWallet() {
 loadDapp()
 
 const onContractInitCallback = async () => {
-  // var hello = await my_contract.methods.getHello().call()
-
-  // var contract_state = "Hello: " + hello;
-  
-  // document.getElementById("contract_state").textContent = contract_state;
+  const result = await my_contract.methods.getAttestationsByUserId(1111).call()
+  console.log('getAttestationsByUserId',result)
 }
 
 const onWalletConnectedCallback = async () => {

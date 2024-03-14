@@ -2,19 +2,84 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_user",
-				"type": "uint256"
+				"internalType": "uint64",
+				"name": "_userId",
+				"type": "uint64"
 			},
 			{
-				"internalType": "uint256",
+				"internalType": "uint64",
 				"name": "_equipmentId",
-				"type": "uint256"
+				"type": "uint64"
 			},
 			{
+				"internalType": "uint32",
+				"name": "_activationDays",
+				"type": "uint32"
+			}
+		],
+		"name": "addEntry",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
-				"name": "_activationTime",
+				"name": "",
 				"type": "uint256"
+			}
+		],
+		"name": "attestationsArray",
+		"outputs": [
+			{
+				"internalType": "uint64",
+				"name": "userId",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "equipmentId",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint32",
+				"name": "activationDays",
+				"type": "uint32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "attestationsCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint64",
+				"name": "_user",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "_equipmentId",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint32",
+				"name": "_activationDays",
+				"type": "uint32"
 			}
 		],
 		"name": "createServiceAttestation",
@@ -26,6 +91,42 @@
 			}
 		],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint64",
+				"name": "_userId",
+				"type": "uint64"
+			}
+		],
+		"name": "getAttestationsByUserId",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint64",
+						"name": "userId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint64",
+						"name": "equipmentId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "uint32",
+						"name": "activationDays",
+						"type": "uint32"
+					}
+				],
+				"internalType": "struct ServiceActivationAttestation.Attestations[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]
