@@ -101,8 +101,7 @@ async function connectWallet() {
 loadDapp()
 
 const onContractInitCallback = async () => {
-  const result = await my_contract.methods.getAttestationsByUserId(1111).call()
-  console.log('getAttestationsByUserId',result)
+  
 }
 
 const onWalletConnectedCallback = async () => {
